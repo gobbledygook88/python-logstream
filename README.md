@@ -14,7 +14,7 @@ Docker or manual setup instructions to be written.
 
 ## Integration
 
-Using this application should be simple. Add a `SocketHandler` to a new or an
+Using this application _should_ be simple. Add a `SocketHandler` to a new or an
 existing python logger instance, making sure the correct address and port
 is used.
 
@@ -22,7 +22,7 @@ is used.
     import logging.handlers
 
 
-    logger = logging.getLogger('socker_logger')
+    logger = logging.getLogger('socket_logger')
     logger.setLevel(logging.INFO)
 
     socketHandler = logging.handlers.SocketHandler(
@@ -48,4 +48,4 @@ local address and port: `http://localhost:5000/subscribe`.
 
 ## Tests
 
-As of writing, there are no tests. __shrugs__.
+As of writing, there are no tests. _shrugs_.
