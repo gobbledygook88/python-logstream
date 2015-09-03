@@ -18,30 +18,34 @@ Using this application _should_ be simple. Add a `SocketHandler` to a new or an
 existing python logger instance, making sure the correct address and port
 is used.
 
-    import logging
-    import logging.handlers
+```python
+import logging
+import logging.handlers
 
 
-    logger = logging.getLogger('socket_logger')
-    logger.setLevel(logging.INFO)
+logger = logging.getLogger('socket_logger')
+logger.setLevel(logging.INFO)
 
-    socketHandler = logging.handlers.SocketHandler(
-        'localhost',
-        logging.handlers.DEFAULT_TCP_LOGGING_PORT)
+socketHandler = logging.handlers.SocketHandler(
+    'localhost',
+    logging.handlers.DEFAULT_TCP_LOGGING_PORT)
 
-    logger.addHandler(socketHandler)
+logger.addHandler(socketHandler)
 
-    logger.info('logged to socket')
+logger.info('logged to socket')
+```
 
 ## Local Debugging
 
 The whole stack isn't neccessary for debugging. All that is required is to
 run the Flask app.
 
-    virtualenv venv
-    ./venv/bin/activate
-    pip install -r requirements.txt
-    python app.py
+```bash
+virtualenv venv
+./venv/bin/activate
+pip install -r requirements.txt
+python app.py
+```
 
 Then any logs to the default TCP logging port will be streamed out via a
 local address and port: `http://localhost:5000/subscribe`.
