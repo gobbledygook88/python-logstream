@@ -74,19 +74,16 @@ class QueuedLogSocketReceiver(SocketServer.ThreadingTCPServer):
 
     def serve_until_stopped(self):
         import select
-        abort = 0
-        while not abort:
+        while not self.abort:
             rd, wr, ex = select.select([self.socket.fileno()],
                                        [], [],
                                        self.timeout)
             if rd:
                 self.handle_request()
-            abort = self.abort
 
 
 if __name__ == '__main__':
     logging.basicConfig(
         format='%(relativeCreated)5d %(name)-15s %(levelname)-8s %(message)s')
     tcpserver = QueuedLogSocketReceiver()
-    print('About to start TCP server...')
     tcpserver.serve_until_stopped()

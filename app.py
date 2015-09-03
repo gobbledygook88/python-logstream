@@ -53,7 +53,11 @@ def subscribe():
 
 def start_app():
     receiver = QueuedLogSocketReceiver()
-    threading.Thread(target=receiver.serve_until_stopped).start()
+
+    t = threading.Thread(target=receiver.serve_until_stopped)
+    t.daemon = True
+    t.start()
+
     return app
 
 
