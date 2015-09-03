@@ -41,8 +41,10 @@ The whole stack isn't neccessary for debugging. All that is required is to
 run the Flask app.
 
 ```bash
+git clone https://github.com/gobbledygook88/python-logstream.git
+cd python-logstream
 virtualenv venv
-./venv/bin/activate
+source ./venv/bin/activate
 pip install -r requirements.txt
 python app.py
 ```
