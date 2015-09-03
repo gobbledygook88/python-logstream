@@ -6,9 +6,11 @@ Some insanely simple event stream of python logs.
 ## Setup
 
     virtualenv venv
-    ./venv/bin/activate
-    pip install -r requirements.txt
-    python app.py
+    source venv/bin/activate
+    cd venv
+    git clone https://github.com/gobbledygook88/python-logstream.git
+    pip install -r python-logstream/requirements.txt
+    python python-logstream/app.py
 
 ## Disclaimer
 
