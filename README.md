@@ -44,9 +44,9 @@ run the Flask app.
 git clone https://github.com/gobbledygook88/python-logstream.git
 cd python-logstream
 virtualenv venv
-source ./venv/bin/activate
+source venv/bin/activate
 pip install -r requirements.txt
-python app.py
+python src/app.py
 ```
 
 Then any logs to the default TCP logging port will be streamed out via a
